@@ -9,7 +9,7 @@ int main(){
     
     printf("Sequencia de Fibonacci\n");
     printf("Digite quantos termos deseja calcular: ");
-    scanf("%d", &quantidade);
+    scanf("%d%*c", &quantidade);
 
     int array[quantidade];
 
