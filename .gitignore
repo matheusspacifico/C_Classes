@@ -1,5 +1,2 @@
 # Ignore everything except necessary
-*
-!*.c
-!*.h
-!.gitignore
+*.exe
