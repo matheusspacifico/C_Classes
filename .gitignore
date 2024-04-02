@@ -1,2 +1,4 @@
 # Ignore everything except necessary
 *.exe
+.vscode
+.json

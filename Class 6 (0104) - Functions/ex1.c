@@ -31,7 +31,7 @@ int main(){
     gets(nome);
     printf("Digite a primeira nota do aluno: ");
     scanf("%f%*c", &n1);
-    printf("Digite a primeira nota do aluno: ");
+    printf("Digite a segunda nota do aluno: ");
     scanf("%f%*c", &n2);
     printf("Digite o email do aluno: ");
     gets(email);
