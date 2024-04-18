@@ -71,7 +71,6 @@ int main(){
         switch(opcao){
             case 1:
                 inserirItem(pedido, &tamanho); // passando endereço de memória pra atualizar variavel sem copiar
-                printf("voltei\n");
                 break;
             case 2:
                 calcularExibir(pedido, tamanho); // passando normal pois nao haverá alteraçoes
