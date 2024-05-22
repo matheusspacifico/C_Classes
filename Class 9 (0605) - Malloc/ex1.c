@@ -2,36 +2,36 @@
 #include <stdlib.h>
 #include <string.h>
 
-void concatenar(char **string_um, char *string_dois)
-{
-	int tamanho = strlen(*string_um) + strlen(string_dois);
-    
-    *string_um = (char *)realloc(*string_um, tamanho * sizeof(char));
-    strcat(*string_um, string_dois);
-}
+char *concatenar(char primeira[20], char segunda[20]){  
+    int tamanho = (strlen(primeira) + strlen(segunda)) + 1; //+1 por conta do terminador
 
+    char *final = (char *)malloc(tamanho * sizeof(char));
+    if (final == NULL)
+    {
+        printf("Erro na alocacao de memoria!\n");
+        exit(1);
+    }
+    
+    strcpy(final, primeira); //passando a primeira pra final
+    strcat(final, segunda); //concatenando com a segunda
+
+    return final;
+}
 
 int main(int argc, char const *argv[])
 {
-    char *string_um = (char *)malloc(20 * sizeof(char));
-    char *string_dois = (char *)malloc(20 * sizeof(char));
+    char primeira[20];
+    char segunda[20];
 
-    if (string_um == NULL || string_dois == NULL)
-    {
-        printf("Erro ao alocar memoria.\n");
-        exit(0);
-    }
-    
-    printf("Digite o valor da primeira string: ");
-    gets(string_um);
-    printf("Digite o valor da segunda string: ");
-    gets(string_dois);
+    printf("Digite a primeira string: ");
+    gets(primeira);
+    printf("Digite a segunda string: ");
+    gets(segunda);
 
-    concatenar(&string_um, string_dois);
-    printf("Resultado: %s\n", string_um);
+    char *final;
+    final = concatenar(primeira, segunda);
+    printf("Strings concatenadas usando alocacao dinamica: %s\n", final);
 
-    free(string_um);
-    free(string_dois);
-
+    free(final);
     return 0;
 }
