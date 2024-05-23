@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-char *concatenar(char primeira[20], char segunda[20]){  
-    int tamanho = (strlen(primeira) + strlen(segunda)) + 1; //+1 por conta do terminador
+char *concatenar(char *primeira, char *segunda){  
+    int tamanho = (strlen(primeira) + strlen(segunda)); 
 
-    char *final = (char *)malloc(tamanho * sizeof(char));
+    char *final = (char *)malloc((tamanho + 1) * sizeof(char)); //+1 por conta do terminador
     if (final == NULL)
     {
         printf("Erro na alocacao de memoria!\n");

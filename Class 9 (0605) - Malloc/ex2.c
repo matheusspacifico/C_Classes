@@ -8,7 +8,7 @@ int main(int argc, char const *argv[])
     printf("Digite a qtnd de strings que tera no vetor: ");
     scanf("%d%*c", &tamanho);
 
-    char **vetor = (char **)malloc(tamanho * sizeof(char *));
+    char **vetor = (char **)malloc((tamanho + 1) * sizeof(char *)); // +1 because terminador
     if (vetor == NULL)
     {
         printf("Houve um problema na alocacao de memoria!\n");
@@ -23,7 +23,7 @@ int main(int argc, char const *argv[])
         gets(buffer);
         int buffer_size = strlen(buffer);
         
-        vetor[i] = (char *)malloc(buffer_size * sizeof(char));
+        vetor[i] = (char *)malloc((buffer_size + 1) * sizeof(char)); // +1 because terminador
         if (vetor[i] == NULL)
         {
             printf("Houve um problema na alocacao de memoria!\n");
